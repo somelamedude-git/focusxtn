@@ -5,24 +5,27 @@
     </head>
 
     <body>
-        <form action="">
+        <form action="" class="block-site">
             <label>
                 What's the website you want to block?
 
-                <input type="url" placeholder="Enter the site"/>
+                <input type="url" placeholder="Enter the site" class="blocked"/>
             </label>
-
+<br/> <br/>
             <label>
                 What's the website you want to be redirected to?
-                <input type="url" placeholder="Enter the site"/>
+                <input type="url" placeholder="Enter the site" class="redirect"/>
             </label>
-
+<br/> <br/>
             <label>
                 Time you want to quit if you're on that website
-                <input type="time"/>
+                <input type="time" class="time"/>
             </label>
+            <br/><br/>
 
-            <button type="submit">Save</button>
+            <button type="submit" class="save">Save</button>
         </form>
     </body>
+
+    <script src="background.js"></script>
 </html>
