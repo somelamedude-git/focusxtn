@@ -6,5 +6,9 @@
     
     "manifest_version": 3,
     "description": "An extension designed to help you focus",
-    "version":"1.0.0"
+    "version":"1.0.0",
+
+    "background":{
+        "scripts":["working.js"]
+    }
 }
