@@ -14,5 +14,13 @@ block.addEventListener("submit", (e)=>{
         return;
     }
 
-    
+    const settings = {
+        blocked_site,
+        redirect,
+        alarm_time
+    }
+
+    chrome.storage.local.set({distractionSettings:settings}, ()=>{
+        alert('Okay slugger, get back to work');
+    })
 });
