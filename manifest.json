@@ -8,7 +8,15 @@
     "description": "An extension designed to help you focus",
     "version":"1.0.0",
 
-    "background":{
-        "scripts":["working.js"]
+    "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }
+],
+    
+    "action":{
+        "default_popup":"form.html"
     }
 }
