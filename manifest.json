@@ -2,5 +2,9 @@
     "name":"focusxtn",
     "permissions":[
         "storage"
-    ]
+    ],
+    
+    "manifest_version": 3,
+    "description": "An extension designed to help you focus",
+    "version":"1.0.0"
 }
