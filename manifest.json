@@ -1,7 +1,8 @@
 {
     "name":"focusxtn",
     "permissions":[
-        "storage"
+        "storage",
+        "activeTab"
     ],
     
     "manifest_version": 3,
@@ -10,13 +11,13 @@
 
     "content_scripts": [
   {
-    "matches": ["<all_urls>"],
+    "matches": ["https://*/*", "http://*/*"],
     "js": ["content.js"],
     "run_at": "document_idle"
   }
 ],
     
     "action":{
-        "default_popup":"form.html"
+        "default_popup":"extension.html"
     }
 }

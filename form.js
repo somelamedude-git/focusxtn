@@ -1,15 +1,14 @@
 const save = document.querySelector(".save");
 const block = document.querySelector(".block-site");
 
-const blocked_site="";
-const redirect="";
+block.addEventListener("submit", (e) => {
+    e.preventDefault(); // You forgot this—stop form from reloading
 
-block.addEventListener("submit", (e)=>{
     const blocked_site = document.querySelector(".blocked").value.trim();
     const redirect = document.querySelector(".redirect").value.trim();
     const alarm_time = document.querySelector(".time").value.trim();
 
-    if(!blocked_site || !redirect || !alarm_time){
+    if (!blocked_site || !redirect || !alarm_time) {
         alert("Fill all the fields to continue");
         return;
     }
@@ -18,9 +17,13 @@ block.addEventListener("submit", (e)=>{
         blocked_site,
         redirect,
         alarm_time
-    }
+    };
 
-    chrome.storage.local.set({distractionSettings:settings}, ()=>{
-        alert('Okay slugger, get back to work');
-    })
+    chrome.storage.local.remove("distractionSettings", () => {
+        console.log("Old settings cleared");
+
+        chrome.storage.local.set({ distractionSettings: settings }, () => {
+            alert("focus up, slugger.");
+        });
+    });
 });
