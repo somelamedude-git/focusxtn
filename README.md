@@ -23,7 +23,7 @@ You open the extension popup (form.html)
 
 You enter:
 
-Site you want to block (e.g., https://chat.openai.com)
+Site you want to block (e.g., https://youtube.com)
 
 Site to redirect to (e.g., https://github.com)
 
