@@ -3,19 +3,19 @@ function redirection() {
         const settings = data.distractionSettings;
 
         if (!settings) {
-            console.log("❌ No settings found");
+            console.log(" No settings found");
             return;
         }
 
         const { blocked_site, redirect, alarm_time } = settings;
         if (!blocked_site || !redirect || !alarm_time) {
-            console.warn("⚠️ Incomplete distractionSettings");
+            console.warn("⚠Incomplete distractionSettings");
             return;
         }
 
         const current_host = window.location.hostname;
 
-        console.log("📦 Retrieved Settings:");
+        console.log(" Retrieved Settings:");
         console.log("   Blocked Site:", blocked_site);
         console.log("   Redirect Site:", redirect);
         console.log("   Alarm Time:", alarm_time);
@@ -33,7 +33,7 @@ function redirection() {
             current_host.includes(blocked_site) &&
             timeToMinutes(currentTime) >= timeToMinutes(alarm_time)
         ) {
-            console.log("🚨 Redirecting due to focus rule triggered.");
+            console.log(" Redirecting due to focus rule triggered.");
             window.location.href = redirect;
         }
     });
@@ -50,10 +50,10 @@ const interval = setInterval(() => {
             setInterval(redirection, 10000);
         } else {
             retryCount++;
-            console.log("⏳ Waiting for distractionSettings...");
+            console.log(" Waiting for distractionSettings...");
             if (retryCount > maxRetries) {
                 clearInterval(interval);
-                console.warn("⚠️ Gave up waiting for distractionSettings.");
+                console.warn("⚠ Gave up waiting for distractionSettings.");
             }
         }
     });
