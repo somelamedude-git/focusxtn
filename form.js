@@ -2,7 +2,7 @@ const save = document.querySelector(".save");
 const block = document.querySelector(".block-site");
 
 block.addEventListener("submit", (e) => {
-    e.preventDefault(); // You forgot this—stop form from reloading
+    e.preventDefault(); 
 
     const blocked_site = document.querySelector(".blocked").value.trim();
     const redirect = document.querySelector(".redirect").value.trim();
